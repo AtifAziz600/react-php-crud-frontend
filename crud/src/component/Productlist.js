@@ -49,7 +49,7 @@ function Productlist() {
                       <td>{pdata.ptitle}</td>
                       <td>{pdata.pprice}</td>
                       <td><img src={`http://localhost/crud/images/${pdata.pimage}`} height={50} width={90} alt="Product" /></td>
-                      <td>{pdata.status === 1 ? "Active" : "Inactive"}</td>
+                      <td>{pdata.pstatus === 1 ? "Active" : "Inactive"}</td>
                       <td>
                         <Link to={"/editproduct/" + pdata.id} className="btn btn-success mx-2">Edit</Link>
                         <button className="btn btn-danger" onClick={() => handleDelete(pdata.id)}>Delete</button>

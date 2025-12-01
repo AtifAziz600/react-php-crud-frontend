@@ -38,6 +38,7 @@ function Editproduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
+    formData.append('_method', 'PUT'); 
     formData.append('id', id);
     formData.append('ptitle', formvalue.ptitle);
     formData.append('pprice', formvalue.pprice);
@@ -46,7 +47,7 @@ function Editproduct() {
       formData.append('pfile', formvalue.pfile);
     }
 
-    const res = await axios.put("http://localhost/crud/api/product.php", formData, {
+    const res = await axios.post("http://localhost/crud/api/product.php", formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     if (res.data.success) {
